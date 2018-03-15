@@ -1,0 +1,20 @@
+﻿@inherits System.Web.Mvc.WebViewPage<Swapcode.EPiDebugViewLinks.Models.ModuleVersion>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Debug view links</title>
+</head>
+<body>
+    <div>
+        <h2>Version: @Model.Version</h2>
+    </div>
+    <div><a href="@Url.Action("Index", "DebugViewLinks")">Back to Links</a></div>
+</body>
+</html>

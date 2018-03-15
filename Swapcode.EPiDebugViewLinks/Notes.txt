@@ -1,0 +1,55 @@
+﻿*** BEFORE CREATING THE NUGET ***
+
+- Increase the AssemblyInformationalVersion value in AssemblyInfo.cs (if creating a new release obviously)
+- change release notes in Swapcode.EPiDebugViewLinks.nuspec file
+
+
+*** CREATING THE NUGET PACKAGE, RUN THESE COMMANDS IN COMMAND PROPMPT ***
+
+Run the "ZipBuildAndPack.bat" in command prompt
+
+
+OR the following commands:
+
+powershell -command "Compress-Archive -Path .\Views\, .\module.config -DestinationPath .\Modules\_protected\EPiDebugViewLinks\EPiDebugViewLinks -CompressionLevel Optimal -Force"
+
+nuget pack Swapcode.EPiDebugViewLinks.csproj -Build -Properties Configuration=Release -Verbosity detailed
+
+
+
+
+
+
+
+*** BUILD ACTION : NONE ***
+
+All files under Views should be "Build Action": None because these files are added to the zip file
+module.config is also added to the zip file so its "Build Action" is also set to None
+
+The root web.config Build Action is none as we don't want to include it to the NuGet package
+
+
+
+
+
+
+
+
+
+*** HISTORY AND MISC ***
+
+packages.config edited manually:
+- Microsoft.CodeDom.Providers.DotNetCompilerPlatform package, added attribute: developmentDependency="true"
+  - done so that the package is not added as a dependency, it is there only because asp.net mvc empty template was used to create the project
+
+
+NuGet nuspec file created with command : nuget spec Swapcode.EPiDebugViewLinks.csproj
+
+Manually edited the Swapcode.EPiDebugViewLinks.nuspec file, only the $version$ is left to the file which will be populated during nuget pack
+
+First create the zip of the module
+PS script to create the ZIP of the module : https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.archive/compress-archive?view=powershell-6
+
+Compress-Archive -Path .\Views\ -DestinationPath .\Modules\_protected\EPiDebugViewLinks\EPiDebugViewLinks -CompressionLevel Optimal
+
+nuget pack Swapcode.EPiDebugViewLinks.nuspec -Properties Configuration=Release;version=1.0.0 -Verbosity detailed

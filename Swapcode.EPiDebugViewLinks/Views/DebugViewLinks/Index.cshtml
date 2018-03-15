@@ -1,0 +1,41 @@
+﻿@inherits System.Web.Mvc.WebViewPage<Swapcode.EPiDebugViewLinks.Models.DebugView>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>EPiDebugController action links</title>
+</head>
+<body>
+    <div>
+        @if (Model.Enabled)
+        {
+            <h1>Episerver debug views</h1>
+
+            <ul>
+                @foreach (var dvl in Model.Links)
+                {
+                    <li>
+                        <a href="@Html.Raw(dvl.ActionUrl)" target="_blank">@dvl.LinkText</a>
+                    </li>
+                }
+            </ul>
+        }
+        else
+        {
+            <p>Episerver debug views are not enabled. Enable debug views, see <a href="https://world.episerver.com/blogs/Per-Bjurstrom/Archive/2012/9/EPiServer-7-Startup-Performance/" target="_blank">this blog post</a>.</p>
+            <p>If nothing has changed, then you need to add to web.config appSettings this key:</p>
+            <pre>
+                &lt;add key="EPi.DebugView.Enabled" value="true" /&gt;
+            </pre>
+        }
+    </div>
+
+    <div><a href="@Url.Action("Info", "DebugViewLinks")">EPiDebugViewlinks Version</a> <a href="@Url.Action("Extra", "DebugViewLinks")">Extra demo action</a></div>
+</body>
+</html>

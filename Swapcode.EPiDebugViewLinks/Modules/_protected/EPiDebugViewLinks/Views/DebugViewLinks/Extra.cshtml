@@ -1,0 +1,24 @@
+﻿@inherits System.Web.Mvc.WebViewPage
+
+@{
+    Layout = null;
+}
+
+@* this file could also be in the location: /Modules/_Protected/EPiDebugViewLinks/Views/Shared/Extra.cshtml *@
+@* and the default view engine would find it from there *@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Debug view links</title>
+</head>
+<body>
+    <div>
+        <h2>Extra</h2>
+        <p>Just a demo view that is not inside the archive. This view is automatically found by the razor view engine with having to define the correct path in controller to this view (just calling return View() in the Extra action).</p>
+    </div>
+    <div><a href="@Url.Action("Index", "DebugViewLinks")">Back to Links</a></div>
+</body>
+</html>
