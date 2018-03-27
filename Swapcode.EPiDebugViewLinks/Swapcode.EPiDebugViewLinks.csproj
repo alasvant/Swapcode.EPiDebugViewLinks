@@ -185,6 +185,7 @@
     <Content Include="Modules\_protected\EPiDebugViewLinks\Views\DebugViewLinks\Extra.cshtml" />
     <Content Include="Modules\_protected\EPiDebugViewLinks\Views\web.config" />
     <None Include="Notes.txt" />
+    <None Include="Views\DebugViewLinks\Test.cshtml" />
     <None Include="Views\DebugViewLinks\Info.cshtml" />
     <None Include="Web.config" />
     <None Include="ZipBuildAndPack.bat" />

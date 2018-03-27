@@ -1,0 +1,22 @@
+﻿@inherits System.Web.Mvc.WebViewPage<Swapcode.EPiDebugViewLinks.Models.ModuleVersion>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Debug view links Test action</title>
+</head>
+<body>
+    <div>
+        <h2>Test action</h2>
+        <p>Just to test if the routing is fixed in the Episerver update 207</p>
+        <p><a href="https://world.episerver.com/documentation/Release-Notes/ReleaseNote/?releaseNoteId=CMS-9794" target="_blank">Fixed bug CMS-9794</a></p>
+    </div>
+    <div><a href="@Url.Action("Index", "DebugViewLinks")">Back to Links</a></div>
+</body>
+</html>
