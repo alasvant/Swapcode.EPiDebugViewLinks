@@ -132,5 +132,11 @@ namespace Swapcode.EPiDebugViewLinks.Controllers
             // this view file is in the modules folder so it will work ok without specifying view location
             return View("Extra");
         }
+
+        public ActionResult Test()
+        {
+            // test action to test is the bug fixed: https://world.episerver.com/documentation/Release-Notes/ReleaseNote/?releaseNoteId=CMS-9794
+            return View();
+        }
     }
 }
