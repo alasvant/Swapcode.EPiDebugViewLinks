@@ -8,7 +8,7 @@
         <owners>Antti Alasvuo</owners>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>Adds a menu item to Episerver admin where links to EPiDebug information views are displayed (by default there are no direct links to these views but developer needs to know these).</description>
-        <releaseNotes>Initial release.</releaseNotes>
+        <releaseNotes>System.Security.Cryptography.Xml dependency version increased to 4.4.2 because of a securty vulnerability.</releaseNotes>
         <copyright>Copyright 2018</copyright>
         <tags>EPiServerModulePackage Debug</tags>
         <dependencies>
